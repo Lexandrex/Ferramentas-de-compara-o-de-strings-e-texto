@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f4f4f8; color:#202020; }
+header { background:#0f2040; color:#fff; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+header h1 { margin:0; font-size:1.1rem; }
+nav { display:flex; gap:8px; flex-wrap:wrap; }
+nav button { padding:8px 12px; background:#1c4d99; border:none; color:#fff; border-radius:4px; cursor:pointer; }
+main { padding:18px; }
+.screen { display:none; }
+.screen.active { display:block; }
+.panel { background:#fff; border:1px solid #d4d7e2; border-radius:6px; padding:12px; margin:8px 0; }
+.panel-row { display:flex; gap:8px; align-items:flex-end; flex-wrap:wrap; margin:8px 0; }
+input, textarea, select, button { font:inherit; }
+#text-input, #pattern-input, #comparison-pattern-input { width:100%; padding:10px; border:1px solid #bfc4d0; border-radius:5px; }
+#log-output { min-height:200px; background:#0c0f1b; color:#adf3ff; padding:10px; overflow:auto; border-radius:5px; border:1px solid #6b7a95; }
+#metrics-output { background:#fff; padding:12px; border:1px solid #d4d7e2; border-radius:6px; }
+
+/* Estilos para tabela de comparação */
+.comparison-table { width:100%; border-collapse:collapse; margin:12px 0; background:#fff; border:1px solid #d4d7e2; border-radius:6px; overflow:hidden; }
+.comparison-table thead { background:#0f2040; color:#fff; }
+.comparison-table th { padding:12px; text-align:left; font-weight:bold; border:1px solid #bfc4d0; }
+.comparison-table td { padding:12px; border:1px solid #d4d7e2; }
+.comparison-table tbody tr:nth-child(odd) { background:#f9f9ff; }
+.comparison-table tbody tr:hover { background:#e8efff; }
+.comparison-summary { background:#f0f4ff; padding:12px; border-radius:6px; margin-top:12px; border-left:4px solid #0f2040; }
+.comparison-summary p { margin:0; color:#202020; }

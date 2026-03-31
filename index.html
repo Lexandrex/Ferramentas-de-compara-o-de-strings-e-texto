@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparador de Busca em Strings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Comparador de Algoritmos de Busca</h1>
+    <nav>
+      <button id="btn-home">Home</button>
+      <button id="btn-execution">Execução</button>
+      <button id="btn-metrics">Métricas</button>
+      <button id="btn-comparison">Comparação Total</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="section-home" class="screen active">
+      <h2>Início</h2>
+      <p>Carregue arquivos e compare algoritmos de busca de padrão em texto.</p>
+    </section>
+
+    <section id="section-execution" class="screen">
+      <h2>Execução</h2>
+      <div class="panel">
+        <label>Arquivos carregados:</label>
+        <ul id="file-list"></ul>
+      </div>
+      <div class="panel">
+        <label>Upload de arquivos .txt</label>
+        <input type="file" id="file-input" multiple accept=".txt" />
+      </div>
+      <div class="panel">
+        <label>Texto (preview automático da concatenação):</label>
+        <textarea id="text-input" rows="4" placeholder="Texto combinado de todos os arquivos..."></textarea>
+      </div>
+      <div class="panel-row">
+        <input type="text" id="pattern-input" placeholder="Padrão de busca" />
+        <select id="algorithm-select">
+          <option value="naive">Naive</option>
+          <option value="rabin-karp">Rabin-Karp</option>
+          <option value="kmp">KMP</option>
+          <option value="boyer-moore">Boyer-Moore</option>
+        </select>
+      </div>
+      <div class="panel-row">
+        <button id="btn-run">Executar</button>
+        <button id="btn-step">Passo a passo</button>
+      </div>
+      <div class="panel">
+        <h3>Log de execução</h3>
+        <pre id="log-output"></pre>
+      </div>
+    </section>
+
+    <section id="section-metrics" class="screen">
+      <h2>Métricas</h2>
+      <div id="metrics-output">Use "Executar" para ver métricas.</div>
+    </section>
+
+    <section id="section-comparison" class="screen">
+      <h2>Comparação Total de Algoritmos</h2>
+      <div class="panel">
+        <p>Digite o padrão e clique em "Comparar Todos" para executar todos os algoritmos simultaneamente.</p>
+        <div class="panel-row">
+          <input type="text" id="comparison-pattern-input" placeholder="Padrão de busca" />
+          <button id="btn-compare-all">Comparar Todos</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Resultados da Comparação</h3>
+        <div id="comparison-output">Nenhuma comparação executada ainda.</div>
+      </div>
+    </section>
+
+    </section>
+  </main>
+
+  <script src="algorithms.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
