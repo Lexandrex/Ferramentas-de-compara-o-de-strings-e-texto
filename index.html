@@ -20,7 +20,7 @@
   <main>
     <section id="section-home" class="screen active">
       <h2>Início</h2>
-      <p>Carregue arquivos e compare algoritmos de busca de padrão em texto.</p>
+      <p>Carregue arquivos, compare algoritmos e monitore o comportamento em tempo real.</p>
     </section>
 
     <section id="section-execution" class="screen">
@@ -58,7 +58,25 @@
 
     <section id="section-metrics" class="screen">
       <h2>Métricas</h2>
-      <div id="metrics-output">Use "Executar" para ver métricas.</div>
+      <div id="metrics-summary" class="panel">Use "Executar" ou "Comparar Todos" para iniciar a coleta de métricas.</div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>Tempo médio por algoritmo</h3>
+          <canvas id="chart-execution-time"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Comparações médias</h3>
+          <canvas id="chart-comparisons"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Contagem de execuções</h3>
+          <canvas id="chart-run-count"></canvas>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Trace de execução</h3>
+        <pre id="trace-output"></pre>
+      </div>
     </section>
 
     <section id="section-comparison" class="screen">
@@ -75,11 +93,9 @@
         <div id="comparison-output">Nenhuma comparação executada ainda.</div>
       </div>
     </section>
-
-    </section>
   </main>
 
-  <script src="algorithms.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
