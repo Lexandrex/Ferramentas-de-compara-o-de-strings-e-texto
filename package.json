@@ -1,0 +1,40 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Este projeto compara algoritmos de busca de padrão em texto e adiciona observabilidade com métricas, traces e dashboard de execução.",
+  "main": "algorithms.js",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --watch",
+    "test:algorithms": "jest algorithms.test.js --verbose",
+    "dev": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lexandrex/Ferramentas-de-compara-o-de-strings-e-texto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lexandrex/Ferramentas-de-compara-o-de-strings-e-texto/issues"
+  },
+  "homepage": "https://github.com/Lexandrex/Ferramentas-de-compara-o-de-strings-e-texto#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.5",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/core": "^2.7.1",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.218.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.218.0",
+    "@opentelemetry/resources": "^2.7.1",
+    "@opentelemetry/sdk-metrics": "^2.7.1",
+    "@opentelemetry/sdk-node": "^0.218.0",
+    "@opentelemetry/sdk-trace-node": "^2.7.1",
+    "@opentelemetry/semantic-conventions": "^1.41.1"
+  }
+}
