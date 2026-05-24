@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1779647119118" clover="3.2.0">
-  <project timestamp="1779647119118" name="All files">
+<coverage generated="1779648061146" clover="3.2.0">
+  <project timestamp="1779648061147" name="All files">
     <metrics statements="128" coveredstatements="119" conditionals="58" coveredconditionals="51" methods="9" coveredmethods="7" elements="195" coveredelements="177" complexity="0" loc="128" ncloc="128" packages="1" files="1" classes="1"/>
     <file name="algorithms.js" path="C:\projetos\teste\algorithms.js">
       <metrics statements="128" coveredstatements="119" conditionals="58" coveredconditionals="51" methods="9" coveredmethods="7"/>

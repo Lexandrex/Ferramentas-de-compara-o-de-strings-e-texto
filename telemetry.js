@@ -1,15 +1,41 @@
-import { trace, context, metrics } from '@opentelemetry/api';
+// Telemetria para browser: usa armazenamento local e não depende de pacotes Node
 
-// Obter tracer e meter do OpenTelemetry
-const tracer = trace.getTracer('string-comparison-tracer', '1.0.0', {
-  schemaUrl: 'https://opentelemetry.io/schemas/1.20.0',
-});
+const tracer = {
+  startSpan(name, options = {}) {
+    const span = {
+      name,
+      attributes: { ...options.attributes },
+      setAttribute(key, value) {
+        this.attributes[key] = value;
+      },
+      setAttributes(attrs) {
+        Object.assign(this.attributes, attrs);
+      },
+      end() {
+        // no-op: o span é finalizado no wrapper startSpan
+      }
+    };
+    return span;
+  }
+};
 
-const meter = metrics.getMeter('string-comparison-meter', '1.0.0', {
-  schemaUrl: 'https://opentelemetry.io/schemas/1.20.0',
-});
+const meter = {
+  createHistogram() {
+    return {
+      record() {
+        // no-op em browser sem OpenTelemetry real
+      }
+    };
+  },
+  createCounter() {
+    return {
+      add() {
+        // no-op em browser sem OpenTelemetry real
+      }
+    };
+  }
+};
 
-// Criar instrumentos de métricas
 const searchDurationHistogram = meter.createHistogram('search_execution_duration_ms', {
   description: 'Tempo de execução de busca em ms',
   unit: 'ms',
