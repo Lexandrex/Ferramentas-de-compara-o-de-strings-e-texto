@@ -148,6 +148,38 @@ function compareAllAlgorithms() {
   displayComparisonTable(results);
 }
 
+function displayComparisonTable(results) {
+  const best = results.reduce((a, b) => a.timeNs < b.timeNs ? a : b);
+
+  const rows = results.map(r => `
+    <tr>
+      <td>${r.name}</td>
+      <td>${r.matches}</td>
+      <td>${r.comparisons}</td>
+      <td>${r.timeMs} ms</td>
+      <td>${r.complexity}</td>
+    </tr>
+  `).join('');
+
+  comparisonOutput.innerHTML = `
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Algoritmo</th>
+          <th>Ocorrências</th>
+          <th>Comparações</th>
+          <th>Tempo</th>
+          <th>Complexidade</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="comparison-summary">
+      <p>Mais rápido nesta execução: <strong>${best.name}</strong> — ${best.timeMs} ms</p>
+    </div>
+  `;
+}
+
 document.getElementById('btn-run').addEventListener('click', () => run(false));
 document.getElementById('btn-step').addEventListener('click', () => run(true));
 document.getElementById('btn-compare-all').addEventListener('click', compareAllAlgorithms);
